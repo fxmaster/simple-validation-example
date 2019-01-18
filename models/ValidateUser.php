@@ -93,11 +93,6 @@ class ValidateUser {
 	}
 
 	public function setError($item, $error){
-		if ($this->errors[$item]) {
-			array_push($this->errors[$item], $error);
-		} else {
-			$this->errors[$item] = [];
-			array_push($this->errors[$item], $error);
-		}
+		$this->errors[$item][] = $error;
 	}
 }
