@@ -1,5 +1,6 @@
 <?php
-class ValidateUser {
+class ValidateUser
+{
 	private $username;
 	private $email;
 	private $password1;
@@ -8,7 +9,8 @@ class ValidateUser {
 	private $db;
 
 
-	public function __construct($username, $email, $password1, $password2, $db){
+	public function __construct($username, $email, $password1, $password2, $db)
+	{
 		$this->username = $username;
 		$this->email = $email;
 		$this->password1 = $password1;
@@ -16,7 +18,8 @@ class ValidateUser {
 		$this->db = $db;
 	}
 
-	public function validateUsername(){
+	public function validateUsername()
+	{
 		if ($this->username) {
 			if (!is_int($this->username[0])) {
 
@@ -41,7 +44,8 @@ class ValidateUser {
 		}
 	}
 
-	public function validateEmail(){
+	public function validateEmail()
+	{
 		if ($this->email){
 			$pattern = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
 			if (preg_match_all($pattern, $this->email)) {
@@ -61,7 +65,8 @@ class ValidateUser {
 		}
 	}
 
-	public function validatePassword(){
+	public function validatePassword()
+	{
 		if ($this->password1 === $this->password2) {
 			if (strlen($this->password1) >= 8) {
 				return true;
@@ -74,13 +79,15 @@ class ValidateUser {
 	}
 
 
-	public function checkFromDb($column, $value){
+	public function checkFromDb($column, $value)
+	{
 		if ($column && $value) {
 			return $this->db->exist('user', $column, $value) ? true : false;
 		}
 	}
 
-	public function validate(){
+	public function validate()
+	{
 		$this->validateUsername();
 		$this->validateEmail();
 		$this->validatePassword();
@@ -88,11 +95,13 @@ class ValidateUser {
 		return !$this->errors ? true : false;
 	}
 
-	public function getErrors(){
+	public function getErrors()
+	{
 		return $this->errors;
 	}
 
-	public function setError($item, $error){
+	public function setError($item, $error)
+	{
 		$this->errors[$item][] = $error;
 	}
 }
