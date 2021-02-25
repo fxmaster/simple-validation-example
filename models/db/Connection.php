@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 class Connection
 {
     public static function make(array $conf): PDO
