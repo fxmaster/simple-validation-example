@@ -1,8 +1,10 @@
 <?php
-    
-    function dump($data){
-        echo '<pre>';
-        print_r($data);
-        echo '</pre>';
-        die ;
-    }
+
+declare(strict_types=1);
+
+function dump(array $data): void {
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+    die;
+}
