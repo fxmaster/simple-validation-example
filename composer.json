@@ -1,0 +1,13 @@
+{
+    "name": "fxmaster/simple-validation-example",
+    "description": "Simple user validation example",
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "authors": [
+        {
+            "name": "Fxmaster",
+            "email": "fxmaster@tuta.io"
+        }
+    ]
+}
