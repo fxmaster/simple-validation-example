@@ -1,10 +1,11 @@
 <?php
 
-include 'QueryBuilder.php';
-include 'Connection.php';
+declare(strict_types=1);
 
-$baseDir = __DIR__ . '/../../';
-$config = include $baseDir . 'config.php';
+require_once(__DIR__ . 'QueryBuilder.php');
+require_once(__DIR__ . 'Connection.php');
+
+$config = require_once(__DIR__ . '/../../../config.php');
 
 return new QueryBuilder(
     Connection::make($config['database'])
