@@ -1,9 +1,9 @@
 <?php
 
-require_once(__DIR__ . '../helper.php');
-require_once(__DIR__ . '../models/UserValidation.php');
 
-$db = require_once(__DIR__ . '../models/db/start.php');
+//require_once(__DIR__ . '../models/UserValidation.php');
+//
+//$db = require_once(__DIR__ . '../models/db/start.php');
 
 $username = $_POST['username'];
 $email = $_POST['email'];

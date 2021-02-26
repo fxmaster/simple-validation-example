@@ -1,4 +1,10 @@
- <?php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Models\DB;
+
+use PDO;
 
 class QueryBuilder
 {
